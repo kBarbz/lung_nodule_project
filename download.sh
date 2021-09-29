@@ -14,6 +14,14 @@ wget https://zenodo.org/record/3723295/files/subset6.zip
 wget https://zenodo.org/record/3723299/files/subset7.zip
 wget https://zenodo.org/record/3723299/files/subset8.zip
 wget https://zenodo.org/record/3723299/files/subset9.zip
+wget https://github.com/zylo117/Yet-Another-Efficient-Pytorch/releases/download/1.0/efficientdet-d0.pth
+wget https://github.com/zylo117/Yet-Another-Efficient-Pytorch/releases/download/1.0/efficientdet-d1.pth
+wget https://github.com/zylo117/Yet-Another-Efficient-Pytorch/releases/download/1.0/efficientdet-d2.pth
+wget https://github.com/zylo117/Yet-Another-Efficient-Pytorch/releases/download/1.0/efficientdet-d3.pth
+wget https://github.com/zylo117/Yet-Another-Efficient-Pytorch/releases/download/1.0/efficientdet-d4.pth
+wget https://github.com/zylo117/Yet-Another-Efficient-Pytorch/releases/download/1.0/efficientdet-d5.pth
+wget https://github.com/zylo117/Yet-Another-Efficient-Pytorch/releases/download/1.0/efficientdet-d6.pth
+wget https://github.com/zylo117/Yet-Another-Efficient-Pytorch/releases/download/1.0/efficientdet-d7.pth
 
 #Invoke-WebRequest https://zenodo.org/record/3723295/files/annotations.csv
 #Invoke-WebRequest https://zenodo.org/record/3723295/files/candidates.csv

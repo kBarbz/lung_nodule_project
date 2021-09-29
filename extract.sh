@@ -32,6 +32,15 @@ mv ./sampleSubmission.csv datasets/luna16/
 mv ./evaluationScript.zip datasets/luna16/
 mv ./seg-lungs-LUNA16.zip datasets/luna16/
 
+mv ./efficientdet-d0.pth ./efficientdet_repo/weights
+mv ./efficientdet-d1.pth ./efficientdet_repo/weights
+mv ./efficientdet-d2.pth ./efficientdet_repo/weights
+mv ./efficientdet-d3.pth ./efficientdet_repo/weights
+mv ./efficientdet-d4.pth ./efficientdet_repo/weights
+mv ./efficientdet-d5.pth ./efficientdet_repo/weights
+mv ./efficientdet-d6.pth ./efficientdet_repo/weights
+mv ./efficientdet-d7.pth ./efficientdet_repo/weights
+
 #Expand-Archive subset0.zip -d datasets/luna16/images/
 #Expand-Archive subset1.zip -d datasets/luna16/images/
 #Expand-Archive subset2.zip -d datasets/luna16/images/
