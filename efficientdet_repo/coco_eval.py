@@ -90,7 +90,7 @@ def evaluate_coco(img_path, set_name, image_ids, coco, model, use_cuda, input_si
         raise Exception('the model does not provide any valid output, check model architecture and the data input')
 
     # write output
-    filepath = f'{set_name}_bbox_results.json'
+    filepath = f'results/{set_name}_bbox_results_d{compound_coef}.json'
     if os.path.exists(filepath):
         os.remove(filepath)
     json.dump(results, open(filepath, 'w'), indent=4)
@@ -146,6 +146,10 @@ def run(weights):
     ap.add_argument('--debug', type=boolean_string, default=False,
                     help='whether visualize the predicted boxes of training, '
                          'the output images will be in test/')
+    ap.add_argument('--skip_pre', type=boolean_string, default=False,
+                    help='Skip preprocessing')
+    ap.add_argument('--skip_train', type=boolean_string, default=False,
+                    help='Skip preprocessing')
 
     args = ap.parse_args()
     compound_coef = args.compound_coef

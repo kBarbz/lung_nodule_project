@@ -69,6 +69,10 @@ def get_args():
     ap.add_argument('--debug', type=boolean_string, default=False,
                     help='whether visualize the predicted boxes of training, '
                          'the output images will be in test/')
+    ap.add_argument('--skip_pre', type=boolean_string, default=False,
+                    help='Skip preprocessing')
+    ap.add_argument('--skip_train', type=boolean_string, default=False,
+                    help='Skip preprocessing')
 
     args = ap.parse_args()
     return args
