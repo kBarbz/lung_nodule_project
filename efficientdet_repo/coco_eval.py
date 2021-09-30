@@ -173,8 +173,11 @@ def run(weights):
     MAX_IMAGES = 10000
     coco_gt = COCO(VAL_GT)
     image_ids = coco_gt.getImgIds()[:MAX_IMAGES]
+
+    if not os.path.exists('results/'):
+        os.mkdir('results/')
     
-    if override_prev_results or not os.path.exists(f'{SET_NAME}_bbox_results.json'):
+    if override_prev_results or not os.path.exists(f'results/{SET_NAME}_bbox_results_d{compound_coef}.json'):
         model = EfficientDetBackbone(compound_coef=compound_coef, num_classes=len(obj_list),
                                      ratios=eval(params['anchors_ratios']), scales=eval(params['anchors_scales']))
         model.load_state_dict(torch.load(weights_path, map_location=torch.device('cpu')))
@@ -189,4 +192,4 @@ def run(weights):
 
         evaluate_coco(VAL_IMGS, SET_NAME, image_ids, coco_gt, model, use_cuda, input_sizes, compound_coef, gpu, use_float16, params, nms_threshold)
 
-    _eval(coco_gt, image_ids, f'{SET_NAME}_bbox_results.json')
+    _eval(coco_gt, image_ids, f'results/{SET_NAME}_bbox_results_d{compound_coef}.json')
