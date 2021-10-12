@@ -330,9 +330,9 @@ def train(opt):
 
 def save_checkpoint(model, name, opt):
     if isinstance(model, CustomDataParallel):
-        torch.save(model.module.model.state_dict(), os.path.join(opt.saved_path, name))
+        torch.save(model.module.model.state_dict(), os.path.join(opt.saved_path, rf'd{opt.compound_coef}', name))
     else:
-        torch.save(model.model.state_dict(), os.path.join(opt.saved_path, name))
+        torch.save(model.model.state_dict(),  os.path.join(opt.saved_path, rf'd{opt.compound_coef}', name))
 
 
 def run():

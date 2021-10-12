@@ -89,9 +89,11 @@ def extract_masks(file_list, dataset_path):
     #
     # Looping over the image files
     #
+    nodule_count = 0
     for fcount, img_file in enumerate(tqdm(file_list)):
         mini_df = df_node[df_node["file"] == img_file]  # get all nodules associate with file
         if mini_df.shape[0] > 0:  # some files may not have a nodule--skipping those
+            nodule_count += mini_df.shape[0]
             # load the data once
             itk_img = sitk.ReadImage(img_file)
             img_array = sitk.GetArrayFromImage(itk_img)  # indexes are z,y,x (notice the ordering)
@@ -118,3 +120,4 @@ def extract_masks(file_list, dataset_path):
                     imgs[i] = img_array[i_z]
                 np.save(Path(os.path.join(output_path, "images_%04d_%04d.npy" % (fcount, node_idx))), imgs)
                 np.save(Path(os.path.join(output_path, "masks_%04d_%04d.npy" % (fcount, node_idx))), masks)
+    print(nodule_count)

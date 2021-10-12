@@ -4,7 +4,7 @@ import efficientdet_repo
 import argparse
 from glob import glob
 from config.config import DATASET_PATH
-
+import os
 
 def boolean_string(s):
     if s not in {'False', 'True'}:
@@ -60,5 +60,7 @@ if __name__ == '__main__':
         dataset_annotation.main.run()
     if not args.skip_train:
         efficientdet_repo.train.run()
-    weights_path = [args.weights] if args.weights else glob(rf'logs/luna16/efficientdet-d{args.compound_coef}*.pth')
+    if not os.path.exists(rf'logs/luna16/d{args.compound_coef}'):
+        os.mkdir(rf'logs/luna16/d{args.compound_coef}')
+    weights_path = [args.weights] if args.weights else glob(rf'logs/luna16/d{args.compound_coef}/efficientdet-d{args.compound_coef}*.pth')
     efficientdet_repo.coco_eval.run(sorted(weights_path, key=lambda x: int(x.split('_')[1]))[-1])
