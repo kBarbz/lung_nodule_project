@@ -60,7 +60,7 @@ def get_args():
                     help='Early stopping\'s parameter: minimum change loss to qualify as an improvement')
     ap.add_argument('--es_patience', type=int, default=0,
                     help='Early stopping\'s parameter: number of epochs with no improvement after which training will be stopped. Set to 0 to disable this technique.')
-    ap.add_argument('--data_path', type=str, default=f'{DATASET_PATH}/prepared_data/',
+    ap.add_argument('--data_path', type=str, default=f'{DATASET_PATH}prepared_data/',
                     help='the root folder of datasets')
     ap.add_argument('--log_path', type=str, default='logs/')
     ap.add_argument('-w', '--load_weights', type=str, default=None,
@@ -106,8 +106,8 @@ def train(opt):
     else:
         torch.manual_seed(42)
 
-    opt.saved_path = opt.saved_path + f'/{params.project_name}/'
-    opt.log_path = opt.log_path + f'/{params.project_name}/tensorboard/'
+    opt.saved_path = opt.saved_path + f'{params.project_name}/'
+    opt.log_path = opt.log_path + f'{params.project_name}/tensorboard/'
     os.makedirs(opt.log_path, exist_ok=True)
     os.makedirs(opt.saved_path, exist_ok=True)
 

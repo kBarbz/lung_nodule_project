@@ -1,0 +1,22 @@
+name: luna16_fix
+channels:
+  - defaults
+dependencies:
+  - python=3.8.0
+  - numpy
+  - opencv
+  - scikit-image
+  - scikit-learn
+  - simpleitk
+  - pandas
+  - shapely
+  - tqdm
+  - ipython
+  - requests
+  - torchvision=0.10.1
+  - pytorch
+  - cudatoolkit=10.2
+  - webcolors
+  - tensorboardx
+prefix: C:\Users\Kurt Barbarich\anaconda3\envs\luna16_fix
+

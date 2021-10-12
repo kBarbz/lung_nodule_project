@@ -1,5 +1,5 @@
 # Luna16 Dataset
-ROOT = r'D:/PycharmProjects/LUNA16/lung_nodule_detection_kbarbari/'
+ROOT = r'/home/ubuntu/lung_nodule_project/'
 PROJECT_NAME = 'luna16'
 
 DATASET_PATH = ROOT + 'datasets/' + PROJECT_NAME + '/'

@@ -58,9 +58,9 @@ if __name__ == '__main__':
     if not args.skip_pre:
         pre_process.process.run()
         dataset_annotation.main.run()
-    if not args.skip_train:
-        efficientdet_repo.train.run()
     if not os.path.exists(rf'logs/luna16/d{args.compound_coef}'):
         os.mkdir(rf'logs/luna16/d{args.compound_coef}')
+    if not args.skip_train:
+        efficientdet_repo.train.run()
     weights_path = [args.weights] if args.weights else glob(rf'logs/luna16/d{args.compound_coef}/efficientdet-d{args.compound_coef}*.pth')
     efficientdet_repo.coco_eval.run(sorted(weights_path, key=lambda x: int(x.split('_')[1]))[-1])
